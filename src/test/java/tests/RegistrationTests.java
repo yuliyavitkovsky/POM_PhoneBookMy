@@ -8,9 +8,10 @@ public class RegistrationTests extends AppiumConfig {
 
     @Test
     public void registrationPositive(){
+        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
         new SplashScreen(driver)
                 .gotoAuthenticationScreen()
-                .fillEmail("dan@mail.com")
+                .fillEmail("dana" + i + "@mail.com")
                 .fillPassword("Mm23456$")
                 .submitRegistration();
 
